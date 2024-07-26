@@ -1,5 +1,5 @@
 {
-  "name": "@benmclean981/picturebook",
+  "name": "picturebook",
   "private": false,
   "version": "0.1.0",
   "main": "./dist/index.js",
