@@ -6,8 +6,17 @@ name: Node.js Package
 on:
   release:
     types: [created]
-on: workflow_dispatch
-
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
 
 jobs:
   publish-npm:
