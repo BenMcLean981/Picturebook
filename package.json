@@ -1,9 +1,16 @@
 {
   "name": "@benmclean981/picturebook",
   "private": false,
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./style.css": "./dist/style.css"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
