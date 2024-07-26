@@ -8,7 +8,7 @@ Currently picturebook is not a standalone application and needs a dev server (li
 
 ## Quickstart
 
-Install picturebook with `yarn add picturebook`.
+Install picturebook with `yarn add @picturebook/core`.
 
 **Be sure to add the css styles in main.tsx**
 
@@ -18,7 +18,7 @@ Install picturebook with `yarn add picturebook`.
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 
-import '@benmclean981/picturebook/style.css';
+import '@picturebook/core/style.css';
 
 import { App } from './app';
 
@@ -36,7 +36,7 @@ root.render(
 **App.tsx**
 
 ```
-import { TreeEntry, View } from '@benmclean981/picturebook';
+import { TreeEntry, View } from '@picturebook/core';
 
 const entries: TreeEntry[] = [{ label: 'h1', render: () => <h1 style={{color: "white"}}>Hello!</h1> }];
 
@@ -52,7 +52,7 @@ You can now run the app with `yarn dev`, you will see your header component avai
 Picturebook allows you to wrap the component view area with a Decorator as follows:
 
 ```
-import { TreeEntry, View } from '@benmclean981/picturebook';
+import { TreeEntry, View } from '@picturebook/core';
 import {PropsWithChildren} from "React";
 
 const entries: TreeEntry[] = [{ label: 'h1', render: () => <h1 style={{color: "white"}}>Hello!</h1> }];
