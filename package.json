@@ -1,7 +1,7 @@
 {
   "name": "@benmclean981/picturebook",
   "private": false,
-  "version": "0.0.11",
+  "version": "0.1.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
