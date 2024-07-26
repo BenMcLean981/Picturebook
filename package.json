@@ -1,7 +1,7 @@
 {
   "name": "@benmclean981/picturebook",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -9,7 +9,8 @@
   "exports": {
     ".": {
       "require": "./dist/cjs/index.js",
-      "default": "./dist/esm/index.js"
+      "default": "./dist/esm/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
