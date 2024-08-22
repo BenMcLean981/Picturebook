@@ -28,7 +28,7 @@ export function View(props: ViewProps) {
       <div className="w-[500px] bg-neutral-800 h-full">
         <Sidebar entries={entries} selectedEntry={entry} setEntry={setEntry} />
       </div>
-      <div className="flex-grow h-full p-10">{getContent()}</div>
+      <div className="flex-grow h-full bg-neutral-700 p-10">{getContent()}</div>
     </div>
   );
 }
