@@ -1,6 +1,5 @@
 import { PropsWithChildren, useMemo, useState } from "react";
 import { IdentifiedEntry, makeIdentified, TreeEntry } from "../lib";
-import { Content } from "./content";
 import { Sidebar } from "./sidebar";
 
 export type ViewProps = {
@@ -8,8 +7,14 @@ export type ViewProps = {
   Decorator?: (props: PropsWithChildren) => JSX.Element;
 };
 
+function DefaultDecorator(props: PropsWithChildren) {
+  return props.children;
+}
+
 export function View(props: ViewProps) {
-  const { entries, Decorator } = props;
+  const { entries } = props;
+
+  const Decorator = props.Decorator ?? DefaultDecorator;
 
   const [entry, setEntry] = useState<IdentifiedEntry | undefined>(undefined);
 
@@ -18,26 +23,22 @@ export function View(props: ViewProps) {
     [entries],
   );
 
-  function getContent() {
-    const children = <Content>{entry?.render()}</Content>;
-
-    if (Decorator !== undefined) {
-      return <Decorator>{children}</Decorator>;
-    } else {
-      return children;
-    }
-  }
-
   return (
     <div className="flex w-full h-dvh">
-      <div className="w-[500px] bg-neutral-800 h-full">
+      <div className="w-[500px] dark:bg-neutral-800 bg-white h-full">
         <Sidebar
           entries={identifiedEntries}
           selectedEntry={entry}
           setEntry={setEntry}
         />
       </div>
-      <div className="flex-grow h-full bg-neutral-700 p-10">{getContent()}</div>
+      <div className="flex-grow h-full dark:bg-neutral-700 bg-neutral-300 p-10">
+        <Decorator>
+          <div className="flex w-full h-full justify-center items-center dark:bg-neutral-800 bg-white rounded-2xl">
+            {entry?.render()}
+          </div>
+        </Decorator>
+      </div>
     </div>
   );
 }

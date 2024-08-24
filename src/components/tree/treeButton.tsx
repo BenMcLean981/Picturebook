@@ -8,8 +8,9 @@ export type TreeButtonProps = {
 export function TreeButton(props: PropsWithChildren<TreeButtonProps>) {
   const { onClick, isSelected } = props;
 
-  const baseClass = "w-full rounded-lg border border-white text-lg text-white";
-  const backgroundClass = isSelected ? "bg-neutral-500" : "";
+  const baseClass =
+    "w-full rounded-lg border text-lg dark:border-white dark:text-white border-black text-black";
+  const backgroundClass = isSelected ? "dark:bg-blue-500 bg-blue-400" : "";
   const className = `${baseClass} ${backgroundClass}`;
 
   return (
