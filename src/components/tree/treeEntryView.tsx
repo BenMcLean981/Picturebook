@@ -1,11 +1,11 @@
-import { Entry, isEntry, TreeEntry } from "../../lib";
+import { IdentifiedEntry, IdentifiedTreeEntry, isEntry } from "../../lib";
 import { EntryGroupView } from "./entryGroupView";
 import { EntryView } from "./entryView";
 
 export type TreeEntryViewProps = {
-  tree: TreeEntry;
-  setEntry: (e: Entry) => void;
-  selectedEntry?: Entry;
+  tree: IdentifiedTreeEntry;
+  setEntry: (e: IdentifiedEntry) => void;
+  selectedEntry?: IdentifiedEntry;
 };
 
 export function TreeEntryView(props: TreeEntryViewProps) {
@@ -16,7 +16,7 @@ export function TreeEntryView(props: TreeEntryViewProps) {
       <EntryView
         entry={tree}
         setEntry={setEntry}
-        isSelected={tree.label === selectedEntry?.label}
+        isSelected={tree.id === selectedEntry?.id}
       />
     );
   } else {

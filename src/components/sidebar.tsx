@@ -1,10 +1,10 @@
-import { TreeEntry, Entry } from "../lib";
+import { IdentifiedEntry, IdentifiedTreeEntry } from "../lib";
 import { TreeEntryView } from "./tree";
 
 export type SidebarProps = {
-  entries: ReadonlyArray<TreeEntry>;
-  selectedEntry?: Entry;
-  setEntry: (e: Entry) => void;
+  entries: ReadonlyArray<IdentifiedTreeEntry>;
+  selectedEntry?: IdentifiedEntry;
+  setEntry: (e: IdentifiedEntry) => void;
 };
 
 export function Sidebar(props: SidebarProps) {
@@ -14,7 +14,7 @@ export function Sidebar(props: SidebarProps) {
     <div className="flex flex-col gap-2 m-2">
       {entries.map((e) => (
         <TreeEntryView
-          key={e.label}
+          key={e.id}
           tree={e}
           selectedEntry={selectedEntry}
           setEntry={setEntry}

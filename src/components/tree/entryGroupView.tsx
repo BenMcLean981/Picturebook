@@ -1,12 +1,13 @@
 import { useCallback, useState } from "react";
-import { Entry, EntryGroup } from "../../lib";
-import { TreeEntryView } from "./treeEntryView";
+import { FaChevronDown, FaChevronRight } from "react-icons/fa6";
+import { IdentifiedEntry, IdentifiedEntryGroup } from "../../lib";
 import { TreeButton } from "./treeButton";
+import { TreeEntryView } from "./treeEntryView";
 
 export type EntryGroupViewProps = {
-  entryGroup: EntryGroup;
-  setEntry: (e: Entry) => void;
-  selectedEntry?: Entry;
+  entryGroup: IdentifiedEntryGroup;
+  setEntry: (e: IdentifiedEntry) => void;
+  selectedEntry?: IdentifiedEntry;
 };
 
 export function EntryGroupView(props: EntryGroupViewProps) {
@@ -23,13 +24,14 @@ export function EntryGroupView(props: EntryGroupViewProps) {
       <TreeButton isSelected={open} onClick={toggleOpen}>
         <div className="flex justify-center items-center gap-2">
           {entryGroup.label}
+          {open ? <FaChevronDown /> : <FaChevronRight />}
         </div>
       </TreeButton>
       {open && (
-        <div className="flex flex-col ml-8 gap-2 m-2">
+        <div className="flex flex-col ml-8 gap-2 mt-2 mx-2">
           {entryGroup.children.map((e) => (
             <TreeEntryView
-              key={e.label}
+              key={e.id}
               tree={e}
               setEntry={setEntry}
               selectedEntry={selectedEntry}

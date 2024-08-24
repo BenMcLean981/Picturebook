@@ -1,10 +1,10 @@
-import { Entry } from "../../lib";
+import { IdentifiedEntry } from "../../lib";
 import { TreeButton } from "./treeButton";
 
 export type EntryViewProps = {
-  setEntry: (e: Entry) => void;
+  setEntry: (e: IdentifiedEntry) => void;
   isSelected: boolean;
-  entry: Entry;
+  entry: IdentifiedEntry;
 };
 
 export function EntryView(props: EntryViewProps) {

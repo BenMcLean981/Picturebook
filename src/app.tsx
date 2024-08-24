@@ -38,7 +38,7 @@ const entries: TreeEntry[] = [
   },
   {
     label: "button",
-    render: () => <button>Button</button>,
+    render: () => <button style={{ color: "white" }}>Button</button>,
   },
 ];
 
