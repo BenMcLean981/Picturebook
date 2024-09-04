@@ -22,13 +22,13 @@ export function EntryGroupView(props: EntryGroupViewProps) {
   return (
     <div>
       <TreeButton isSelected={open} onClick={toggleOpen}>
-        <div className="flex justify-center items-center gap-2">
+        <div className="tw-flex tw-justify-center tw-items-center tw-gap-2">
           {entryGroup.label}
           {open ? <FaChevronDown /> : <FaChevronRight />}
         </div>
       </TreeButton>
       {open && (
-        <div className="flex flex-col ml-8 gap-2 mt-2 mx-2">
+        <div className="tw-flex tw-flex-col tw-ml-8 tw-gap-2 tw-mt-2 tw-mx-2">
           {entryGroup.children.map((e) => (
             <TreeEntryView
               key={e.id}

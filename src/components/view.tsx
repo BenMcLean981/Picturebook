@@ -24,17 +24,17 @@ export function View(props: ViewProps) {
   );
 
   return (
-    <div className="flex w-full h-dvh">
-      <div className="w-[500px] dark:bg-neutral-800 bg-white h-full">
+    <div className="tw-flex tw-w-full tw-h-dvh">
+      <div className="tw-w-[500px] dark:tw-bg-neutral-800 tw-bg-white tw-h-full">
         <Sidebar
           entries={identifiedEntries}
           selectedEntry={entry}
           setEntry={setEntry}
         />
       </div>
-      <div className="flex-grow h-full dark:bg-neutral-700 bg-neutral-300 p-10">
+      <div className="tw-flex-grow tw-h-full dark:tw-bg-neutral-700 tw-bg-neutral-300 tw-p-10">
         <Decorator>
-          <div className="flex w-full h-full justify-center items-center dark:bg-neutral-800 bg-white rounded-2xl">
+          <div className="tw-flex tw-w-full tw-h-full tw-justify-center tw-items-center dark:tw-bg-neutral-800 tw-bg-white tw-rounded-2xl">
             {entry?.render()}
           </div>
         </Decorator>

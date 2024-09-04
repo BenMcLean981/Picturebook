@@ -11,7 +11,7 @@ export function Sidebar(props: SidebarProps) {
   const { entries, selectedEntry, setEntry } = props;
 
   return (
-    <div className="flex flex-col gap-2 m-2">
+    <div className="tw-flex tw-flex-col tw-gap-2 tw-m-2">
       {entries.map((e) => (
         <TreeEntryView
           key={e.id}
